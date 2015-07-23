@@ -1,6 +1,4 @@
-<?mysql
-
-
+<?php
 class MySqlDb
 {
 	public $link;
@@ -24,9 +22,9 @@ class MySqlDb
 			$this->link = @mysql_connect($host, $user, $password);
 		}
 
-		if($this->link)
+		if(!$this->link)
 		{
-			throw new Exception('Unable to connect database'.mysql_error());
+			throw new Exception('Unable to connect database' . mysql_error());
 		}
 		if($database)	$this->useDatabase($database);
 
@@ -94,7 +92,7 @@ class MySqlDb
 	public function insert($query, $r_type=MySqlDb::INSERT_GET_AUTO_INCREMENT_ID)
 	{
 		$r = $this->query($query);
-		if($r_type == MySqlDb::INSERT_GET_EFFECTED_ROWS) {
+		if($r_type == MySqlDb::INSERT_GET_AFFECTED_ROWS) {
 			return @mysql_affected_rows($this->link);
 		} else {
 			return @mysql_insert_id($this->link);

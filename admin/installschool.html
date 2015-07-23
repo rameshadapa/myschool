@@ -50,12 +50,18 @@
 		</style>
 	</head>
 	<body>
-		<form method="post" action="../ws/installschool.php">
+		<form method="get" action="../ws/installschool.php">
 		<div class="fieldset">
 			<fieldset>
 			<legend>School Details</legend>
 				<p><label class="field" for="inpSchoolName"><span>*</span>School Name:</label><input class="textbox-30" type="text" id="inpSchoolName" name="inpSchoolName"></p>
-				<p><label class="field" for="inpSchoolType"><span>*</span>School Type:</label><input class="textbox-30" type="text" id="inpSchoolType" name="inpSchoolType"></p>
+				<p><label class="field" for="inpSchoolType"><span>*</span>School Type:</label>
+				<select name="inpSchoolType" id="inpSchoolType">
+				<option value="primary">Primary</option>
+				<option value="secondary">Secondary</option>
+				<option value="postsecondary">Post Secondary</option>
+				</select>
+				</p>
 				<p><label class="field" for="inpaddrlane1"><span>*</span>Address Lane 1:</label><input class="textbox-30" type="text" id="inpaddrlane1" name="inpaddrlane1" placeholder="Flat No/Door No"></p>
 				<p><label class="field" for="inpaddrlane2"><span>*</span>Address Lane 2:</label><input class="textbox-30" type="text" id="inpaddrlane2" name="inpaddrlane2" placeholder="Street/colony"></p>
 				<p><label class="field" for="inpcity"><span>*</span>City:</label><input class="textbox-30" type="text" id="inpcity" name="inpcity"></p>
@@ -63,6 +69,15 @@
 				<p><label class="field" for="inpphone"><span>*</span>Phone:</label><input class="textbox-30" type="tel" id="inpphone" name="inpphone" placeholder="99XXXXXXXX"></p>
 				<p><label class="field" for="inpEmail"><span>*</span>EMail Address:</label><input class="textbox-30" type="email" id="inpEmail" name="inpEmail" placeholder="youaddress@example.com"></p>
 				<p><label class="field" for="inpoverview"><span>*</span>Overview:</label><input class="textbox-30" type="text" id="inpoverview" name="inpoverview"></p>
+				<p><label class="field" for="inpAnualFee"><span>*</span>Annual Fees:</label>
+				<select name="inpAnualFee" id="inpAnualFee">
+				<option value="0">0-10000</option>
+				<option value="1">10000-50000</option>
+				<option value="2">50000-100000</option>
+				<option value="3">10000-500000</option>
+				<option value="4">500000+</option>
+				</select>
+				</p>
 				<p><input class="submit-btn" type="submit" id="inpsubmit" value="Submit"></p>
 			</fieldset>
 		</div>

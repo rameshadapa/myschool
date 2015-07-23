@@ -16,16 +16,18 @@ include_once('./db/dbconnect.php');
 	$school_overview = $_GET['inpoverview'];
 	$school_ann_fees = $_GET['inpAnualFee'];
 
-	$format = 'xml';	//strtolower($_GET['format']) == 'json' ? 'json' : 'xml';
+	$format = strtolower($_GET['format']) == 'json' ? 'json' : 'xml';
 
+	$result = '';
+	$link = NULL;
 	$db = MySqlDb::getInstance();
-	print 'Start to connect'; 
 	try	{
-		$db->connect('107.108.188.41', 'root', 'ramesha');
+		$link =	$db->connect('localhost', 'root', 'ramesha', 'mydb');
 	} catch(Exception $e)	{
-		print $e->getMessage();
+		$result = $e->getMessage();
 	}
-
+	$query = "INSERT INTO school(school_name, school_addr, school_lat, school_lng, school_city, school_state, school_type, school_ann_fees, school_phone, school_email, school_overview, school_imgs_path, school_doa) VALUES ('$school_name','$school_addrlane1 . $school_addrlane2', 10.000, 10.000, '$school_city', '$school_state', '$school_type', '$school_ann_fees', '$school_phone', '$school_email', '$school_overview', 'file', CURRENT_TIMESTAMP);";
+	$db->insert($query);
 	if($format == 'json') {
 		header('Content-type: application/json');
 		echo json_encode('Everything is fine..');

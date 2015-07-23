@@ -29,7 +29,7 @@ class MySqlDb
 		if($database)	$this->useDatabase($database);
 
 		$version = mysql_get_server_info();
-		$this->conn_str = "'$databse' on '$user@$host' (MySQL $version)";
+		$this->conn_str = "'$database' on '$user@$host' (MySQL $version)";
 
 		return $this->link;
 	}

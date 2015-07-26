@@ -1,40 +1,165 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Simple Map</title>
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-		<meta charset="utf-8">
-		<style>
-			html, body, #map-canvas {
-				position: relative;
-				width: 90%;
-				height: 100%;
-				left: 10%;
-				margin: 0;
-				padding: 0;
-			}
-		</style>
-		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-		<script>
-			function initiliaze() {
-				var map;
-				var latLng = new google.maps.LatLng(28.6139, 77.2090);
-				var mapOptions = {
-					zoom: 8,
-					center: latLng
-				}
-				map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-				var marker = new google.maps.Marker({
-					position: latLng,
-					map: map,
-					title: 'New Delhi Marker'
-				});
-			}
+<html lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="author" content="Script Tutorials" />
+  <title>Finding and Contact best matching schools near by you | My School | MySchool.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-			google.maps.event.addDomListener(window, 'load', initiliaze);
-		</script>
-	</head>
-	<body>
-		<div id="map-canvas"></div>
-	</body>
+  <!-- attach CSS styles -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- navigation panel -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#home"><span class="glyphicon glyphicon-home"></span> My School</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse-main">
+        <ul class="nav navbar-nav">
+          <li><a href="#search-map">Search</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#information">Information</a></li>
+          <li><a href="#google_map">Contact</a></li>
+        </ul>
+	<ul class="nav navbar-nav navbar-right">
+	  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign UP</a></li>
+	  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	</ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <!-- first section - Home -->
+  <div id="home" class="home">
+    <div class="text-vcenter">
+      <h1>Find My School</h1>
+      <h3>Lets Start! Go find some good school for better future.</h3>
+      <a href="#search-map" class="btn btn-default btn-lg">Explore</a>
+    </div>
+  </div>
+  <!-- /first section -->
+
+  <!-- second section -->
+  <div id="search-map" class="pad-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-14 text-center">
+          <h4>MySchool.com searching enables you to find best suitable schools near by you.</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /second section -->
+
+  <!-- second section - Map -->
+  <input id="search-box" class="controls" type="text" placeholder="Search Box"></div>
+  <div id="search" class="pad-section">
+  </div>
+  <!-- /second section -->
+
+  <!-- third section - Services -->
+  <div id="services" class="pad-section">
+    <div class="container">
+      <h2 class="text-center">Our Services</h2> <hr />
+      <div class="row text-center">
+        <div class="col-sm-3 col-xs-6">
+          <i class="glyphicon glyphicon-search"> </i>
+          <h4>School Search</h4>
+          <p>Find the school that is right for you, your son, your daughter or any of the children on your life. Give the gift of private education. Search now.</p>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <i class="glyphicon glyphicon-info-sign"> </i>
+          <h4>School Info</h4>
+          <p>Everything about our school can be found in ONE location - no more searching for an email or browsing the website for info.</p>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <i class="glyphicon glyphicon-filter"> </i>
+          <h4>Filter Info</h4>
+          <p>An Information filtering system is a system that removes redundant or unwanted information from an information stream.</p>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <i class="glyphicon glyphicon-phone-alt"> </i>
+          <h4>Contact</h4>
+          <p>Contact information like telephone number, e-mail, address details. Additionally provided geo location information too.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /third section -->
+
+  <!-- fourth section - Information -->
+  <div id="information" class="pad-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2 class="panel-title">Additional information</h2>
+            </div>
+            <div class="panel-body lead">
+		To finish unfinished business, we need to innovate. This means creating interconnected systems and new networks of problem-solvers that cross sectors, generations and geographies. It means scaling up local solutions to solve global challenges – and adapting them in new contexts. It means shaping new markets and spurring the private sector to design for development. It means creating solutions together with communities, and with a view to including all their members – preventing innovation from widening gaps. It means doing things differently, to drive change for children.
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2 class="panel-title">Additional information</h2>
+            </div>
+            <div class="panel-body lead">
+		Children's rights education is education where the rights of the child, as described in the Convention, is taught and practiced in individual classrooms. But in its most developed form, children’s rights are taught and practiced in a systematic and comprehensive way across grade levels, across the school, and across school districts. With full-blown children’s rights education, children’s rights are not simply an addition to a particular subject or classroom. Rather, the rights of the child are incorporated into the school curricula, teaching practices, and teaching materials across subjects and grade levels and are the centerpiece of school mission statements, behavior codes, and school policies and practices.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /fourth section -->
+
+  <!-- fifth section -->
+  <div id="services" class="pad-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h2>MySchool.com in action</h2>
+          <h3>Find us on Google maps</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /fifth section -->
+
+  <!-- google map -->
+  <div id="google_map"></div>
+  <!-- /google map -->
+
+  <!-- footer -->
+  <footer>
+    <hr />
+    <div class="container">
+      <p class="text-right">Copyright &copy; MySchool.com</p>
+    </div>
+  </footer>
+  <!-- /footer -->
+
+  <!-- attach JavaScripts -->
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="//maps.google.com/maps/api/js?sensor=true&libraries=places"></script>
+  <script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
+  <script type="text/javascript" src="js/jquery.localScroll.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
 </html>

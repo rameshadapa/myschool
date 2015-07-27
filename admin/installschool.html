@@ -1,87 +1,97 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Install school in city</title>
-		<style>
-			div.fieldset {
-				border: solid black thin;
-				width: 50%;
-				background-color: #ffffb0;
-			}
-			fieldset {
-				border: none;
-				margin: 0 0 0 0px;
-				width: 100%;
-				padding: 0;
-			}
-			legend {
-				font-size: 20px;
-				font-weight: bold;
-				background-color: blue;
-				color: white;
-				width: 100%;
-				padding: 5px;
-			}
-			label.field {
-				position: relative;
-				text-align: right;
-				width: 30%;
-				float: left;
-			}
-			input.textbox-30 {
-				position: relative;
-				width: 40%;
-				float: left;
-			}
-			input.submit-btn {
-				position: relative;
-				width: 20%;
-				left: 40%;
-				float: left;
-			}
-			fieldset p {
-				clear: both;
-				padding: 5px;
-			}
-			label span, .required {
-				color: red;
-				font-weight: bold;
-			}
-		</style>
+		<meta charset="utf-8" />
+		<meta name="Ramesh Adapa" content="Install your school." />
+		<title>Install school in city | MySchool.com</title>
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  		<link href="../css/bootstrap.min.css" rel="stylesheet">
+  		<link href="../css/style.css" rel="stylesheet" />
 	</head>
 	<body>
-		<form method="get" action="../ws/installschool.php">
-		<div class="fieldset">
-			<fieldset>
-			<legend>School Details</legend>
-				<p><label class="field" for="inpSchoolName"><span>*</span>School Name:</label><input class="textbox-30" type="text" id="inpSchoolName" name="inpSchoolName"></p>
-				<p><label class="field" for="inpSchoolType"><span>*</span>School Type:</label>
-				<select name="inpSchoolType" id="inpSchoolType">
-				<option value="primary">Primary</option>
-				<option value="secondary">Secondary</option>
-				<option value="postsecondary">Post Secondary</option>
-				</select>
-				</p>
-				<p><label class="field" for="inpaddrlane1"><span>*</span>Address Lane 1:</label><input class="textbox-30" type="text" id="inpaddrlane1" name="inpaddrlane1" placeholder="Flat No/Door No"></p>
-				<p><label class="field" for="inpaddrlane2"><span>*</span>Address Lane 2:</label><input class="textbox-30" type="text" id="inpaddrlane2" name="inpaddrlane2" placeholder="Street/colony"></p>
-				<p><label class="field" for="inpcity"><span>*</span>City:</label><input class="textbox-30" type="text" id="inpcity" name="inpcity"></p>
-				<p><label class="field" for="inpstate"><span>*</span>State:</label><input class="textbox-30" type="text" id="inpstate" name="inpstate"></p>
-				<p><label class="field" for="inpphone"><span>*</span>Phone:</label><input class="textbox-30" type="tel" id="inpphone" name="inpphone" placeholder="99XXXXXXXX"></p>
-				<p><label class="field" for="inpEmail"><span>*</span>EMail Address:</label><input class="textbox-30" type="email" id="inpEmail" name="inpEmail" placeholder="youaddress@example.com"></p>
-				<p><label class="field" for="inpoverview"><span>*</span>Overview:</label><input class="textbox-30" type="text" id="inpoverview" name="inpoverview"></p>
-				<p><label class="field" for="inpAnualFee"><span>*</span>Annual Fees:</label>
-				<select name="inpAnualFee" id="inpAnualFee">
-				<option value="0">0-10000</option>
-				<option value="1">10000-50000</option>
-				<option value="2">50000-100000</option>
-				<option value="3">10000-500000</option>
-				<option value="4">500000+</option>
-				</select>
-				</p>
-				<input type="hidden" name="format" value="xml">
-				<p><input class="submit-btn" type="submit" id="inpsubmit" value="Submit"></p>
-			</fieldset>
-		</div>
+		<div class="container">
+			<h2>School Details</h2>
+				<form class="form-horizontal" role="form" method="GET" action="../ws/installschool.php">
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="schoolname"><span>*</span>School Name:</label>
+				  <div class="col-sm-6">
+				    <input class="form-control" type="text" id="inpSchoolName" name="inpSchoolName">
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="inpSchoolType"><span>*</span>School Type:</label>
+				  <div class="col-sm-6">
+				    <select class="form-control" name="inpSchoolType" id="inpSchoolType">
+				    <option value="primary">Primary</option>
+				    <option value="secondary">Secondary</option>
+				    <option value="postsecondary">Post Secondary</option>
+				    </select>
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="inpaddrlane1"><span>*</span>Address Lane 1:</label>
+				  <div class="col-sm-6">
+				    <input class="form-control" type="text" id="inpaddrlane1" name="inpaddrlane1" placeholder="Flat No/Door No">
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="inpaddrlane2"><span>*</span>Address Lane 2:</label>
+				  <div class="col-sm-6">
+				    <input class="form-control" type="text" id="inpaddrlane2" name="inpaddrlane2" placeholder="Street/colony">
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="inpcity"><span>*</span>City:</label>
+				  <div class="col-sm-6">
+				    <input class="form-control" type="text" id="inpcity" name="inpcity">
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="inpstate"><span>*</span>State:</label>
+				  <div class="col-sm-6">
+				    <input class="form-control" type="text" id="inpstate" name="inpstate">
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="inpphone"><span>*</span>Phone:</label>
+				  <div class="col-sm-6">
+				    <input class="form-control" type="tel" id="inpphone" name="inpphone" placeholder="99XXXXXXXX">
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="inpEmail"><span>*</span>EMail Address:</label>
+				  <div class="col-sm-6">
+				    <input class="form-control" type="email" id="inpEmail" name="inpEmail" placeholder="youaddress@example.com">
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="inpoverview"><span>*</span>Overview:</label>
+				  <div class="col-sm-6">
+				    <input class="form-control" type="text" id="inpoverview" name="inpoverview">
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="inpAnualFee"><span>*</span>Annual Fees:</label>
+				  <div class="col-sm-6">
+				    <select class="form-control" name="inpAnualFee" id="inpAnualFee">
+				    <option value="0">0-10000</option>
+				    <option value="1">10000-50000</option>
+				    <option value="2">50000-100000</option>
+				    <option value="3">10000-500000</option>
+				    <option value="4">500000+</option>
+				    </select>
+				  </div>
+				</div>
+				<div class="form-group">
+				  <input type="hidden" name="format" value="xml">
+				</div>
+				<div class="form-group">
+				  <div class="col-sm-offset-3 col-sm-6">
+				    <button type="submit" class="btn btn-primary col-sm-4">Submit</button>
+				  </div>
+				</div>
+				<!--p><input class="submit-btn" type="submit" id="inpsubmit" value="Submit"></p-->
 		</form>
+		</div>
 	</body>
 </html>

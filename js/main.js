@@ -1,10 +1,20 @@
 function initialize() {
 
   var markers = [];
-  var map = new google.maps.Map(document.getElementById('search'), {
-    zoom: 4,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  });
+  var mapOptions = {
+	zoom: 16,
+	mapTypeId: google.maps.MapTypeId.ROADMAP,
+	panControl: false,
+	scaleControl: false,
+	mapTypeControl: false,
+	streetViewControl: false,
+	overviewMapControl: false,
+	zoomControl: true,
+	zoomControlOptions: {
+	  style: google.maps.ZoomControlStyle.SMALL
+	}
+  };
+  var map = new google.maps.Map(document.getElementById('search'), mapOptions);
 
   var defaultBounds = new google.maps.LatLngBounds(
       new google.maps.LatLng(-33.8902, 151.1759),

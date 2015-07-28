@@ -7,11 +7,12 @@
   		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   		<link href="../css/bootstrap.min.css" rel="stylesheet">
   		<link href="../css/style.css" rel="stylesheet" />
+		<link href="../css/bootstrapValidator.min.css" rel="stylesheet" />
 	</head>
 	<body>
 		<div class="container">
 			<h2>School Details</h2>
-				<form class="form-horizontal" role="form" method="GET" action="../ws/installschool.php">
+				<form id="schoolInsForm" class="form-horizontal" role="form" method="GET" action="../ws/installschool.php">
 				<div class="form-group">
 				  <label class="control-label col-sm-2" for="schoolname"><span>*</span>School Name:</label>
 				  <div class="col-sm-6">
@@ -67,7 +68,7 @@
 				<div class="form-group">
 				  <label class="control-label col-sm-2" for="inpoverview"><span>*</span>Overview:</label>
 				  <div class="col-sm-6">
-				    <input class="form-control" type="text" id="inpoverview" name="inpoverview">
+				    <textarea class="form-control" id="inpoverview" name="inpoverview" rows="5"></textarea>
 				  </div>
 				</div>
 				<div class="form-group">
@@ -93,5 +94,9 @@
 				<!--p><input class="submit-btn" type="submit" id="inpsubmit" value="Submit"></p-->
 		</form>
 		</div>
+  		<script src="../js/jquery-1.10.2.js"></script>
+  		<script src="../js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
+		<script src="../js/installschool.js"></script>
 	</body>
 </html>

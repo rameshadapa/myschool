@@ -81,6 +81,28 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 $(document).ready(function (){
 
+  $('#login-form').bootstrapValidator({
+    err: {
+	container: '#messages'
+    },
+    fields: {
+	inpUserName: {
+	  validators: {
+	    notEmpty: {
+	      message: 'The username or email address should not empty.'
+	    }
+	  }
+	},
+	inpUserPwd: {
+	  validators: {
+	    notEmpty: {
+	      message: 'The user password should not be empty'
+	    }
+	  }
+	}
+    }
+  });
+
   // create a LatLng object containing the coordinate for the center of the map
   var latlng = new google.maps.LatLng(17.6883, 83.2186);
 

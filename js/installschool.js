@@ -1,7 +1,6 @@
 $(document).ready(function() {
   $('#schoolInsForm').bootstrapValidator({
-    container: '#messages',
-    feedbackIcons: {
+    icons: {
 	valid: 'glyphicon glyphicon-ok',
 	invalid: 'glyphicon glyphicon-remove',
 	validating: 'glyphicon glyphicon-refresh'
@@ -56,8 +55,11 @@ $(document).ready(function() {
 	    },
 	    stringLength: {
 		min: 10,
-		max: 13,
-		message: 'The phone number must be below 10-13 characters length.'
+		message: 'The phone number must not be below 10 characters length.'
+	    },
+	    regexp: {
+		message: 'The phone number can only contains the digits, -, (, ), +',
+		regexp: /^[0-9\s\-()+\.]+$/
 	    }
 	  }
 	},
@@ -75,6 +77,13 @@ $(document).ready(function() {
 	  validators: {
 	    notEmpty: {
 		message: 'The overview is required and cannot be empty'
+	    }
+	  }
+	},
+	inpAnualFee: {
+	  validators: {
+	    notEmpty: {
+		message: 'The anual fee is required and cannot be empty'
 	    }
 	  }
 	}
